@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import axios from "axios";
 
+
+//Dummy data for testing
 const entries = [
   {
     id: 1,
@@ -27,9 +30,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productList: entries,
+      //productList: [entries],
+      productList: [],
     };
   }
+
+  componentDidMount() {
+    this.refreshList();
+  }
+
+  refreshList = () => {
+    axios
+      .get("/api/entries/")
+      .then((res) => this.setState({productList: res.data }))
+      .catch((err) => console.log(err));
+  };
 
   render() {
     return (
