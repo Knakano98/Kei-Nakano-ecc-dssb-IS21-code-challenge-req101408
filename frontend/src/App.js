@@ -59,6 +59,10 @@ class App extends Component {
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
 
+  editItem = (item) => {
+    this.setState({ activeItem: item, modal: !this.state.modal });
+  };
+
   handleSubmit = (item) => {
     console.log(item)
     this.toggle();
@@ -122,6 +126,7 @@ class App extends Component {
                       <td>{ item.dev_names }</td>
                       <button
                          className="btn btn-primary"
+                         onClick={() => this.editItem(item)}
                        >
                          Edit
                        </button>
