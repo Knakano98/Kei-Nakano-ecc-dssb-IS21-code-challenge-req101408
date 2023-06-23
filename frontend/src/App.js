@@ -31,7 +31,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //productList: [entries],
       productList: [],
       modal: false,
     };
@@ -53,7 +52,7 @@ class App extends Component {
                   scrum_master: "",
                   product_owner: "",
                   start_date:"",
-                  methodology:"",
+                  methodology:"Agile",
                   location:"",
                   dev_names:"" };
     this.setState({ activeItem: item, modal: !this.state.modal });
@@ -64,19 +63,22 @@ class App extends Component {
   };
 
   handleSubmit = (item) => {
-    console.log(item)
-    this.toggle();
-    if (item.id) {
-     axios
-       .put(`/api/entries/${item.id}/`, item)
-       .then((res) => this.refreshList());
-     return;
-   }
 
-   console.log("should run")
-   axios
-     .post("/api/entries/", item) //this is 400ing for some reason
-     .then((res) => this.refreshList());
+    if (item.name=="" || item.scrum_master=="" || item.product_owner=="" || item.start_date=="" || item.location=="" || item.dev_names==""){
+      alert("Please fill in every category")
+    }
+    else{
+      this.toggle();
+      if (item.id) {
+       axios
+         .put(`/api/entries/${item.id}/`, item)
+         .then((res) => this.refreshList());
+       return;
+     }
+     axios
+       .post("/api/entries/", item) //this is 400ing for some reason
+       .then((res) => this.refreshList());
+    }
   };
 
   toggle = () => {
@@ -133,7 +135,6 @@ class App extends Component {
                     </tr>
                   );
                 })}
-
               </tbody>
             </table>
             </div>

@@ -27,9 +27,9 @@ export default class CustomModal extends Component {
     }
 
     const activeItem = { ...this.state.activeItem, [name]: value };
-
     this.setState({ activeItem });
   };
+
 
   render() {
     const { toggle, onSave } = this.props;
@@ -72,14 +72,16 @@ export default class CustomModal extends Component {
                 value={this.state.activeItem.start_date}
                 onChange={this.handleChange}
               />
-
-              <Input
-                type="text"
+              <select
+                class="form-control" id="sel1"
                 id="entry-methodology"
                 name="methodology"
                 value={this.state.activeItem.methodology}
                 onChange={this.handleChange}
-              />
+                >
+                <option>Agile</option>
+                <option>Waterfall</option>
+              </select>
               <Input
                 type="text"
                 id="entry-location"
@@ -102,7 +104,8 @@ export default class CustomModal extends Component {
         <ModalFooter>
           <Button
             color="success"
-            onClick={() => onSave(this.state.activeItem)}
+            onClick={() =>
+              onSave(this.state.activeItem)}
           >
             Save
           </Button>
