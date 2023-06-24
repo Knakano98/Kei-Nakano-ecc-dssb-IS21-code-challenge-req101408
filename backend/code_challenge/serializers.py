@@ -4,4 +4,9 @@ from .models import Entry
 class EntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Entry
-        fields = ('name','id', 'scrum_master','product_owner','start_date','methodology','location','dev_names')
+        dev_name1=serializers.CharField(max_length=500, allow_blank=True)
+        dev_name2=serializers.CharField(max_length=500, allow_blank=True)
+        dev_name3=serializers.CharField(max_length=500, allow_blank=True)
+        dev_name4=serializers.CharField(max_length=500, allow_blank=True)
+        dev_name5=serializers.CharField(max_length=500, allow_blank=True)
+        fields = ('name','id', 'scrum_master','product_owner','start_date','methodology','location','dev_name1','dev_name2','dev_name3','dev_name4','dev_name5')

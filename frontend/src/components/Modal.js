@@ -49,6 +49,7 @@ export default class CustomModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Enter Product Name"
               />
+              <Label for="entry-scrum_master">Scrum Master</Label>
               <Input
                 type="text"
                 id="entry-scrum_master"
@@ -57,6 +58,7 @@ export default class CustomModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Enter Scrum Master"
               />
+              <Label for="entry-product_owner">Product Owner</Label>
               <Input
                 type="text"
                 id="entry-product_owner"
@@ -65,6 +67,7 @@ export default class CustomModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Enter Product Owner"
               />
+              <Label for="entry-start_date">Starting Date</Label>
               <Input
                 type="date"
                 id="entry-start_date"
@@ -72,6 +75,7 @@ export default class CustomModal extends Component {
                 value={this.state.activeItem.start_date}
                 onChange={this.handleChange}
               />
+              <Label for="entry-methodology">Methodology</Label>
               <select
                 class="form-control" id="sel1"
                 id="entry-methodology"
@@ -82,6 +86,7 @@ export default class CustomModal extends Component {
                 <option>Agile</option>
                 <option>Waterfall</option>
               </select>
+              <Label for="entry-location">Location</Label>
               <Input
                 type="text"
                 id="entry-location"
@@ -90,13 +95,46 @@ export default class CustomModal extends Component {
                 onChange={this.handleChange}
                 placeholder="Enter Location"
               />
+              <Label for="entry-dev_name1">Developers</Label>
               <Input
                 type="text"
-                id="entry-dev_names"
-                name="dev_names"
-                value={this.state.activeItem.dev_names}
+                id="entry-dev_name1"
+                name="dev_name1"
+                value={this.state.activeItem.dev_name1}
                 onChange={this.handleChange}
-                placeholder="Enter Dev Names"
+                placeholder="Enter Dev Name"
+              />
+              <Input
+                type="text"
+                id="entry-dev_name2"
+                name="dev_name2"
+                value={this.state.activeItem.dev_name2}
+                onChange={this.handleChange}
+                placeholder="Enter Dev Name"
+              />
+              <Input
+                type="text"
+                id="entry-dev_name3"
+                name="dev_name3"
+                value={this.state.activeItem.dev_name3}
+                onChange={this.handleChange}
+                placeholder="Enter Dev Name"
+              />
+              <Input
+                type="text"
+                id="entry-dev_name4"
+                name="dev_name4"
+                value={this.state.activeItem.dev_name4}
+                onChange={this.handleChange}
+                placeholder="Enter Dev Name"
+              />
+              <Input
+                type="text"
+                id="entry-dev_name5"
+                name="dev_name5"
+                value={this.state.activeItem.dev_name5}
+                onChange={this.handleChange}
+                placeholder="Enter Dev Name"
               />
             </FormGroup>
           </Form>

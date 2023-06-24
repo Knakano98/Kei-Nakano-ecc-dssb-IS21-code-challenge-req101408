@@ -54,7 +54,11 @@ class App extends Component {
                   start_date:"",
                   methodology:"Agile",
                   location:"",
-                  dev_names:"" };
+                  dev_name1:"",
+                  dev_name2:"" ,
+                  dev_name3:"" ,
+                  dev_name4:"" ,
+                  dev_name5:"" ,};
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
 
@@ -63,9 +67,11 @@ class App extends Component {
   };
 
   handleSubmit = (item) => {
-
-    if (item.name=="" || item.scrum_master=="" || item.product_owner=="" || item.start_date=="" || item.location=="" || item.dev_names==""){
-      alert("Please fill in every category")
+    if (item.name=="" || item.scrum_master=="" || item.product_owner=="" || item.start_date=="" || item.location==""){
+      alert("Please fill in every category.")
+    }
+    else if (item.dev_name1=="" &  item.dev_name2=="" &  item.dev_name3=="" &  item.dev_name4=="" &  item.dev_name5=="" ) {
+      alert("Please enter at least one developer name.")
     }
     else{
       this.toggle();
@@ -76,7 +82,7 @@ class App extends Component {
        return;
      }
      axios
-       .post("/api/entries/", item) //this is 400ing for some reason
+       .post("/api/entries/", item)
        .then((res) => this.refreshList());
     }
   };
@@ -88,7 +94,7 @@ class App extends Component {
   render() {
     return (
       <main className="container">
-        <h1 className="text-white text-uppercase text-center my-4">ECC Products</h1>
+        <h1 className="text-black text-uppercase text-center my-4">ECC Products</h1>
         <div className="row">
           <div className="col-md-60 col-sm-10 mx-auto p-0">
             <div className="card p-3">
@@ -99,8 +105,9 @@ class App extends Component {
                 >
                   Add Product
                 </button>
+                Total products: {this.state.productList.length}
               </div>
-              <table>
+              <table border="1">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -111,7 +118,6 @@ class App extends Component {
                   <th>Methodology</th>
                   <th>Location</th>
                   <th>Developer Names</th>
-                  <th> </th>
                 </tr>
               </thead>
               <tbody>
@@ -125,7 +131,11 @@ class App extends Component {
                       <td>{ item.start_date }</td>
                       <td>{ item.methodology }</td>
                       <td>{ item.location }</td>
-                      <td>{ item.dev_names }</td>
+                      <td>{ item.dev_name1 } <br />
+                          { item.dev_name2 } <br />
+                          { item.dev_name3 } <br />
+                          { item.dev_name4 } <br />
+                          { item.dev_name5 } <br /></td>
                       <button
                          className="btn btn-primary"
                          onClick={() => this.editItem(item)}

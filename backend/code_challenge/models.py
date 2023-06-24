@@ -11,7 +11,11 @@ class Entry(models.Model):
     location= models.CharField(max_length=240, null=True)
     #Todo: Potentially replace this with either one to many or arrayfield in future if time allows.
     #Currently stored as charfield, and use logic to divide names up.
-    dev_names=models.CharField(max_length=500, null=True)
+    dev_name1=models.CharField(max_length=500, blank=True)
+    dev_name2=models.CharField(max_length=500, blank=True)
+    dev_name3=models.CharField(max_length=500, blank=True)
+    dev_name4=models.CharField(max_length=500, blank=True)
+    dev_name5=models.CharField(max_length=500, blank=True)
 
     def _str_(self):
         return self.title
