@@ -9,8 +9,6 @@ class Entry(models.Model):
     start_date = models.DateField(default=now)
     methodology = models.CharField(max_length=120, default="Agile")
     location= models.CharField(max_length=240, null=True)
-    #Todo: Potentially replace this with either one to many or arrayfield in future if time allows.
-    #Currently stored as charfield, and use logic to divide names up.
     dev_name1=models.CharField(max_length=500, blank=True)
     dev_name2=models.CharField(max_length=500, blank=True)
     dev_name3=models.CharField(max_length=500, blank=True)

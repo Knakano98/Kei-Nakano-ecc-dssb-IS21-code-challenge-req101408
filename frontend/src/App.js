@@ -15,6 +15,7 @@ class App extends Component {
     this.refreshList();
   }
 
+  //Function to fetch info from entries and rerender.
   refreshList = () => {
     axios
       .get("/api/entries/")
@@ -23,6 +24,7 @@ class App extends Component {
   };
 
   createItem = () => {
+    //Create new product, Agile as default because it's the default option in the drop down.
     const item = {name:"",
                   scrum_master: "",
                   product_owner: "",
@@ -42,6 +44,7 @@ class App extends Component {
   };
 
   handleSubmit = (item) => {
+    //Checks for making sure very needed input is not blank.
     if (item.name=="" || item.scrum_master=="" || item.product_owner=="" || item.start_date=="" || item.location==""){
       alert("Please fill in every category.")
     }
@@ -50,12 +53,14 @@ class App extends Component {
     }
     else{
       this.toggle();
+      //Put item and refresh if item has an id, so if it's being edited.
       if (item.id) {
        axios
          .put(`/api/entries/${item.id}/`, item)
          .then((res) => this.refreshList());
        return;
      }
+     //No id, so new item is being created.
      axios
        .post("/api/entries/", item)
        .then((res) => this.refreshList());

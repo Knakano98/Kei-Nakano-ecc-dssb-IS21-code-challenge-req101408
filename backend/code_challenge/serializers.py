@@ -4,6 +4,7 @@ from .models import Entry
 class EntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Entry
+        #Need allow blank for dev names so it doesn't break when user doesn't have every name filled out.
         dev_name1=serializers.CharField(max_length=500, allow_blank=True)
         dev_name2=serializers.CharField(max_length=500, allow_blank=True)
         dev_name3=serializers.CharField(max_length=500, allow_blank=True)

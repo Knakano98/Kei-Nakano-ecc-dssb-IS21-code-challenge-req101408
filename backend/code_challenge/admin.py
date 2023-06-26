@@ -5,5 +5,4 @@ class EntryAdmin(admin.ModelAdmin):
     list_display = ('name','scrum_master','product_owner','methodology','location')
 
 # Register your models here.
-
 admin.site.register(Entry, EntryAdmin)
