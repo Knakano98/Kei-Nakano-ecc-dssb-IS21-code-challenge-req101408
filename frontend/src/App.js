@@ -2,31 +2,6 @@ import React, { Component } from "react";
 import Modal from "./components/Modal";
 import axios from "axios";
 
-
-//Dummy data for testing
-const entries = [
-  {
-    id: 1,
-    name:"name",
-    scrum_master: "scrum master",
-    product_owner: "product owner",
-    start_date:"11/11/1111",
-    methodology:"waterfall",
-    location:"location",
-    dev_names:"John Doe;Jon Do;Jan Do"
-  },
-  {
-    id:2,
-    name:"name",
-    scrum_master: "scrum master",
-    product_owner: "product owner",
-    start_date:"11/11/1111",
-    methodology:"waterfall",
-    location:"location",
-    dev_names:"devnames"
-  }
-];
-
 class App extends Component {
   constructor(props) {
     super(props);
