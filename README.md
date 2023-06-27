@@ -1,9 +1,14 @@
 # Kei-Nakano-ecc-dssb-IS21-code-challenge-req101408
 
 ## Installation
-Clone/Download the repo, and navigate to the `frontend` and `backend` directories to install dependencies with
+Clone/Download the repo, and navigate to the `frontend` directory to install dependencies with
 ```
 npm install
+```
+
+Navigate to the `backend` directory to install dependencies with 
+```
+pip3 install -r requirements.txt
 ```
 ## Usage
 ### First Usage
