@@ -21,7 +21,6 @@ export default class CustomModal extends Component {
 
   handleChange = (e) => {
     let { name, value } = e.target;
-
     const activeItem = { ...this.state.activeItem, [name]: value };
     this.setState({ activeItem });
   };
@@ -29,7 +28,6 @@ export default class CustomModal extends Component {
 
   render() {
     const { toggle, onSave } = this.props;
-
     return (
       <Modal isOpen={true} toggle={toggle}>
         <ModalHeader toggle={toggle}>Product</ModalHeader>
@@ -65,7 +63,7 @@ export default class CustomModal extends Component {
               />
 
               <div>
-              {this.state.activeItem.id!=true && (
+              {this.state.activeItem.id==null && (
                 <>
                   <Label for="entry-start_date">Starting Date</Label>
                   <Input

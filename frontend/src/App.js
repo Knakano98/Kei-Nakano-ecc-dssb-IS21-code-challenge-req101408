@@ -39,6 +39,7 @@ class App extends Component {
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
 
+  //Edit item function, pass item back into modal to edit its info.
   editItem = (item) => {
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
